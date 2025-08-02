@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bumgore3hrs5q"]
+[gd_scene load_steps=11 format=3 uid="uid://bumgore3hrs5q"]
 
+[ext_resource type="PackedScene" uid="uid://bw8x5fyav1824" path="res://others/present.tscn" id="1_28aoi"]
 [ext_resource type="PackedScene" uid="uid://c4enbfgu18exb" path="res://fields/basket_field.tscn" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://bbg2v5hi5pjw0" path="res://balls/ball.tscn" id="2_pyidc"]
 [ext_resource type="PackedScene" uid="uid://bctesu5ij3ote" path="res://meta/money/ui/money_ui.tscn" id="3_vvh5c"]
+[ext_resource type="Script" uid="uid://bhgnxxe6xxpqp" path="res://scenarios/game_startup.gd" id="5_jnlp7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vho56"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -35,6 +37,8 @@ environment = SubResource("Environment_pyidc")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
+
+[node name="Present" parent="." instance=ExtResource("1_28aoi")]
 
 [node name="World3D" type="Node3D" parent="."]
 
@@ -71,7 +75,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Money UI" parent="CanvasLayer/Game UI" instance=ExtResource("3_vvh5c")]
 layout_mode = 1
 offset_left = -40.0
+
+[node name="GameStartup" type="Node" parent="." node_paths=PackedStringArray("present", "initial_ball")]
+script = ExtResource("5_jnlp7")
+present = NodePath("../Present")
+initial_ball = NodePath("../World3D/Ball")
+metadata/_custom_type_script = "uid://bhgnxxe6xxpqp"

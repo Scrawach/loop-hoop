@@ -8,9 +8,10 @@ extends Node3D
 func _ready() -> void:
 	initialize_from_children()
 	initial_ball.target_tile = initial_tile
+	initial_ball.current_tile = initial_tile
 
 func initialize_from_children() -> void:
-	var index: int
+	var index: int = 0
 	for child in get_children():
 		if not child is BasketRow:
 			continue

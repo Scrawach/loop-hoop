@@ -39,3 +39,10 @@ func give_money() -> void:
 	get_parent().add_child(instance)
 	instance.global_position = global_position
 	Game.wallet.add_money(1)
+
+func get_random_point() -> Vector3:
+	const MODEL_HALF_SIZE = Vector2(0.5, 0.3)
+	var center := global_position
+	var offset_x := randf_range(-MODEL_HALF_SIZE.x, MODEL_HALF_SIZE.x)
+	var offset_z := randf_range(-MODEL_HALF_SIZE.y, MODEL_HALF_SIZE.y)
+	return center + Vector3(offset_x, 0, offset_z)
