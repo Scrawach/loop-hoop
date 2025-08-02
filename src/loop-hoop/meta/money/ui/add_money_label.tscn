@@ -1,12 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cri8oj6gv74ta"]
+[gd_scene load_steps=3 format=3 uid="uid://cri8oj6gv74ta"]
 
 [ext_resource type="Script" uid="uid://bcrn832jh2ox2" path="res://meta/money/ui/add_money_label.gd" id="1_b0gis"]
+[ext_resource type="FontFile" uid="uid://n7wr8aarc5j5" path="res://fonts/sigmar-one-latin-400-normal.ttf" id="1_yodab"]
 
 [node name="Add Money Label" type="Label3D"]
 billboard = 1
 no_depth_test = true
 modulate = Color(0, 1, 0, 1)
 text = "+1$"
+font = ExtResource("1_yodab")
 font_size = 64
 script = ExtResource("1_b0gis")
 speed = 0.5

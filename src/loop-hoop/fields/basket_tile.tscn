@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cri8oj6gv74ta" path="res://meta/money/ui/add_money_label.tscn" id="2_cmjn7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6iooe"]
-size = Vector3(1, 0.1, 1)
+size = Vector3(1.4, 0.1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmjn7"]
-size = Vector3(0.8, 0.05, 0.8)
+size = Vector3(1.2, 0.05, 0.8)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmjn7"]
 blend_mode = 3

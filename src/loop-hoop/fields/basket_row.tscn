@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkverud8vto3j"]
+
+[ext_resource type="Script" uid="uid://7ymi8xvo30p5" path="res://fields/basket_row.gd" id="1_lx1ol"]
+[ext_resource type="PackedScene" uid="uid://sdh72xin6nwy" path="res://fields/basket_tile.tscn" id="2_xjpox"]
+
+[node name="Basket Row" type="Node3D"]
+script = ExtResource("1_lx1ol")
+
+[node name="Basket Tile" parent="." instance=ExtResource("2_xjpox")]
+
+[node name="Basket Tile2" parent="." instance=ExtResource("2_xjpox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, 0)
+
+[node name="Basket Tile3" parent="." instance=ExtResource("2_xjpox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4, 0, 0)
