@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw8x5fyav1824"]
+[gd_scene load_steps=10 format=3 uid="uid://bw8x5fyav1824"]
 
 [ext_resource type="PackedScene" uid="uid://bcryrjf7feyxn" path="res://others/present.glb" id="1_0fx8l"]
 [ext_resource type="Script" uid="uid://d3irpmkst427w" path="res://others/present.gd" id="2_abf8c"]
+[ext_resource type="FontFile" uid="uid://n7wr8aarc5j5" path="res://fonts/sigmar-one-latin-400-normal.ttf" id="3_t8d5v"]
+[ext_resource type="Script" uid="uid://cmebmpx8wptrv" path="res://others/floating_label_3d.gd" id="4_gekd7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fx8l"]
 albedo_color = Color(0.486, 0.5, 0.29, 1)
@@ -170,6 +172,21 @@ shape = SubResource("BoxShape3D_0fx8l")
 wait_time = 0.3
 one_shot = true
 
+[node name="Destroy" type="Timer" parent="." index="6"]
+one_shot = true
+
+[node name="Label3D" type="Label3D" parent="." index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 1
+no_depth_test = true
+text = "CLICK"
+font = ExtResource("3_t8d5v")
+font_size = 64
+script = ExtResource("4_gekd7")
+amplitude = 0.1
+speed = 0.005
+
 [connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]
 [connection signal="mouse_entered" from="StaticBody3D" to="." method="_on_static_body_3d_mouse_entered"]
 [connection signal="timeout" from="Open Pause" to="." method="_on_open_pause_timeout"]
+[connection signal="timeout" from="Destroy" to="." method="_on_destroy_timeout"]

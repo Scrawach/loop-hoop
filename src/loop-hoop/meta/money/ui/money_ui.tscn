@@ -10,6 +10,7 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usjgg"]
 bg_color = Color(1, 1, 1, 1)
+draw_center = false
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
@@ -56,6 +57,7 @@ theme_override_constants/margin_bottom = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 15
 
 [node name="Money Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/PanelContainer/MarginContainer/HBoxContainer"]
 unique_name_in_owner = true

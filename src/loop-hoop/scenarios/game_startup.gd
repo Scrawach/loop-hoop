@@ -2,6 +2,7 @@ class_name GameStartup
 extends Node
 
 @export var present: Present
+@export var field: BasketField
 @export var initial_ball: Ball
 
 func _ready() -> void:
