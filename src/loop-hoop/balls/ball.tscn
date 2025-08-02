@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbg2v5hi5pjw0"]
+[gd_scene load_steps=4 format=3 uid="uid://bbg2v5hi5pjw0"]
 
 [ext_resource type="Script" uid="uid://btjwp4aw46peg" path="res://balls/ball.gd" id="1_ht7ih"]
+[ext_resource type="PackedScene" uid="uid://cri8oj6gv74ta" path="res://meta/money/ui/add_money_label.tscn" id="2_5j7o3"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_dk0jc"]
+radius = 0.25
+height = 0.5
 
 [node name="Ball" type="Node3D"]
 script = ExtResource("1_ht7ih")
+add_money_label = ExtResource("2_5j7o3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.271384, 0)
 mesh = SubResource("SphereMesh_dk0jc")

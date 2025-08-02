@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cri8oj6gv74ta"]
+
+[ext_resource type="Script" uid="uid://bcrn832jh2ox2" path="res://meta/money/ui/add_money_label.gd" id="1_b0gis"]
+
+[node name="Add Money Label" type="Label3D"]
+billboard = 1
+no_depth_test = true
+modulate = Color(0, 1, 0, 1)
+text = "+1$"
+font_size = 64
+script = ExtResource("1_b0gis")

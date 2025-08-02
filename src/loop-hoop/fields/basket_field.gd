@@ -2,9 +2,14 @@ class_name BasketField
 extends Node3D
 
 @export var rows: Array[Array]
+@export var initial_ball: Ball
+@export var initial_tile: BasketTile
+@export var target_tile: BasketTile
 
 func _ready() -> void:
 	initialize_from_children()
+	initial_ball.current_tile = initial_tile
+	initial_ball.target_tile = target_tile
 
 func initialize_from_children() -> void:
 	var index: int

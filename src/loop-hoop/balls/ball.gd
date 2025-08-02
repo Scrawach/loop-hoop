@@ -7,6 +7,7 @@ extends Node3D
 @export var target_tile: BasketTile
 
 @export var field: BasketField
+@export var add_money_label: PackedScene
 
 var is_forward: bool = true
 
@@ -36,4 +37,7 @@ func take_next_target() -> void:
 	target_tile = field.get_next_tile(current_tile, is_forward)
 
 func give_money() -> void:
-	print("give money")
+	var instance := add_money_label.instantiate() as AddMoneyLabel
+	get_parent().add_child(instance)
+	instance.global_position = global_position + Vector3.UP
+	Game.wallet.add_money(1)

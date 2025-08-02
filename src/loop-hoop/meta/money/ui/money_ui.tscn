@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bctesu5ij3ote"]
+
+[ext_resource type="Script" uid="uid://ctlnftb63oi1y" path="res://meta/money/ui/money_ui.gd" id="1_eufqx"]
+
+[node name="Money UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_eufqx")
+
+[node name="Money Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

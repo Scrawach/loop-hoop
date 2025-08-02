@@ -6,16 +6,56 @@
 [node name="Basket Field" type="Node3D"]
 script = ExtResource("1_wen20")
 
-[node name="Basket Row" type="Node3D" parent="."]
+[node name="Basket Row10" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
-[node name="Basket Tile" parent="Basket Row" instance=ExtResource("1_fjk1f")]
+[node name="Basket Tile" parent="Basket Row10" instance=ExtResource("1_fjk1f")]
 
-[node name="Basket Row2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
+[node name="Basket Tile2" parent="Basket Row10" instance=ExtResource("1_fjk1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
-[node name="Basket Tile" parent="Basket Row2" instance=ExtResource("1_fjk1f")]
+[node name="Basket Tile3" parent="Basket Row10" instance=ExtResource("1_fjk1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 
-[node name="Basket Row3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.4)
+[node name="Basket Row9" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
-[node name="Basket Tile" parent="Basket Row3" instance=ExtResource("1_fjk1f")]
+[node name="Basket Tile" parent="Basket Row9" instance=ExtResource("1_fjk1f")]
+
+[node name="Basket Tile2" parent="Basket Row9" instance=ExtResource("1_fjk1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Basket Tile3" parent="Basket Row9" instance=ExtResource("1_fjk1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Basket Row6" type="Node3D" parent="."]
+
+[node name="Basket Tile" parent="Basket Row6" instance=ExtResource("1_fjk1f")]
+
+[node name="Basket Tile2" parent="Basket Row6" instance=ExtResource("1_fjk1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Basket Tile3" parent="Basket Row6" instance=ExtResource("1_fjk1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Basket Row7" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Basket Tile" parent="Basket Row7" instance=ExtResource("1_fjk1f")]
+
+[node name="Basket Tile2" parent="Basket Row7" instance=ExtResource("1_fjk1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Basket Tile3" parent="Basket Row7" instance=ExtResource("1_fjk1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Basket Row8" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Basket Tile" parent="Basket Row8" instance=ExtResource("1_fjk1f")]
+
+[node name="Basket Tile2" parent="Basket Row8" instance=ExtResource("1_fjk1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="Basket Tile3" parent="Basket Row8" instance=ExtResource("1_fjk1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)

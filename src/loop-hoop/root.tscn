@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bumgore3hrs5q"]
+[gd_scene load_steps=7 format=3 uid="uid://bumgore3hrs5q"]
 
 [ext_resource type="PackedScene" uid="uid://c4enbfgu18exb" path="res://fields/basket_field.tscn" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://bbg2v5hi5pjw0" path="res://balls/ball.tscn" id="2_pyidc"]
+[ext_resource type="PackedScene" uid="uid://bctesu5ij3ote" path="res://meta/money/ui/money_ui.tscn" id="3_vvh5c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vho56"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -25,16 +26,17 @@ shadow_enabled = true
 
 [node name="World3D" type="Node3D" parent="."]
 
-[node name="Basket Field" parent="World3D" instance=ExtResource("1_pq8q7")]
+[node name="Basket Field" parent="World3D" node_paths=PackedStringArray("initial_ball", "initial_tile", "target_tile") instance=ExtResource("1_pq8q7")]
+initial_ball = NodePath("../Ball")
+initial_tile = NodePath("Basket Row6/Basket Tile")
+target_tile = NodePath("Basket Row7/Basket Tile2")
 
-[node name="Ball" parent="World3D" node_paths=PackedStringArray("current_tile", "target_tile", "field") instance=ExtResource("2_pyidc")]
+[node name="Ball" parent="World3D" node_paths=PackedStringArray("field") instance=ExtResource("2_pyidc")]
 speed = 1.0
-current_tile = NodePath("../Basket Field/Basket Row/Basket Tile")
-target_tile = NodePath("../Basket Field/Basket Row2/Basket Tile")
 field = NodePath("../Basket Field")
 
 [node name="Camera Point" type="Marker3D" parent="."]
-transform = Transform3D(0.820729, -0.331283, 0.465462, -0.0627306, 0.757537, 0.649771, -0.567863, -0.562485, 0.600951, 0, 0, 1.3115)
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866026, 0.5, -0.707107, -0.353553, 0.612372, -0.0231345, 0.0341706, -0.0274253)
 
 [node name="Node3D" type="Node3D" parent="Camera Point"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
@@ -42,5 +44,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 [node name="Camera3D" type="Camera3D" parent="Camera Point/Node3D"]
 projection = 1
 size = 8.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Game UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Money UI" parent="CanvasLayer/Game UI" instance=ExtResource("3_vvh5c")]
 
 [editable path="World3D/Basket Field"]
