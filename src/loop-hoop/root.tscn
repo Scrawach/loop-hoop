@@ -31,6 +31,9 @@ initial_ball = NodePath("../Ball")
 initial_tile = NodePath("Basket Row6/Basket Tile")
 target_tile = NodePath("Basket Row7/Basket Tile2")
 
+[node name="Basket Tile" parent="World3D/Basket Field/Basket Row6" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00461149, 0.00568295, -0.00655007)
+
 [node name="Ball" parent="World3D" node_paths=PackedStringArray("field") instance=ExtResource("2_pyidc")]
 speed = 1.0
 field = NodePath("../Basket Field")
