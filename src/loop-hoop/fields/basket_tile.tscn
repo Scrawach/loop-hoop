@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://sdh72xin6nwy"]
+
+[ext_resource type="Script" uid="uid://dvuijgpv0xxxf" path="res://fields/basket_tile.gd" id="1_6cwqi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6iooe"]
+size = Vector3(2, 0.1, 1.2)
+
+[node name="Basket Tile" type="Node3D"]
+script = ExtResource("1_6cwqi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_6iooe")

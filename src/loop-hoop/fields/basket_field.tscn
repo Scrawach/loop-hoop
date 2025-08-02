@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4enbfgu18exb"]
+
+[ext_resource type="PackedScene" uid="uid://sdh72xin6nwy" path="res://fields/basket_tile.tscn" id="1_fjk1f"]
+[ext_resource type="Script" uid="uid://c7g37hyvyh3sn" path="res://fields/basket_field.gd" id="1_wen20"]
+
+[node name="Basket Field" type="Node3D"]
+script = ExtResource("1_wen20")
+
+[node name="Basket Row" type="Node3D" parent="."]
+
+[node name="Basket Tile" parent="Basket Row" instance=ExtResource("1_fjk1f")]
+
+[node name="Basket Row2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2)
+
+[node name="Basket Tile" parent="Basket Row2" instance=ExtResource("1_fjk1f")]
+
+[node name="Basket Row3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.4)
+
+[node name="Basket Tile" parent="Basket Row3" instance=ExtResource("1_fjk1f")]
