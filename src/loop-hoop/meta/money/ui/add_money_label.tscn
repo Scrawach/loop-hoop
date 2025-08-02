@@ -9,3 +9,4 @@ modulate = Color(0, 1, 0, 1)
 text = "+1$"
 font_size = 64
 script = ExtResource("1_b0gis")
+speed = 0.5
