@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b081wp5ertwsm"]
+
+[ext_resource type="PackedScene" uid="uid://bklcmxvhlrfb6" path="res://fields/tiles/tile-base.glb" id="1_ppb2w"]
+
+[node name="tile-base" instance=ExtResource("1_ppb2w")]

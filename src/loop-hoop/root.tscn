@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bumgore3hrs5q"]
+[gd_scene load_steps=9 format=3 uid="uid://bumgore3hrs5q"]
 
 [ext_resource type="PackedScene" uid="uid://c4enbfgu18exb" path="res://fields/basket_field.tscn" id="1_pq8q7"]
 [ext_resource type="PackedScene" uid="uid://bbg2v5hi5pjw0" path="res://balls/ball.tscn" id="2_pyidc"]
@@ -12,8 +12,20 @@ ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 sky_material = SubResource("ProceduralSkyMaterial_vho56")
 
 [sub_resource type="Environment" id="Environment_pyidc"]
+background_mode = 1
+background_color = Color(0.560784, 0.592157, 0.670588, 1)
 sky = SubResource("Sky_pq8q7")
+ambient_light_source = 2
+ambient_light_color = Color(0.662745, 0.694118, 0.772549, 1)
+ambient_light_energy = 0.75
 tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vvh5c"]
+size = Vector2(1000, 1000)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28aoi"]
+disable_ambient_light = true
+albedo_color = Color(0.92549, 0.717647, 0.419608, 1)
 
 [node name="Root" type="Node"]
 
@@ -33,15 +45,22 @@ initial_ball = NodePath("../Ball")
 max_time = 1.0
 field = NodePath("../Basket Field")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0213724, 0)
+mesh = SubResource("PlaneMesh_vvh5c")
+surface_material_override/0 = SubResource("StandardMaterial3D_28aoi")
+
 [node name="Camera Point" type="Marker3D" parent="."]
-transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866026, 0.5, -0.707107, -0.353553, 0.612372, -0.0231345, 0.0341706, -0.0274253)
+transform = Transform3D(0.707107, -0.353553, 0.612372, 0, 0.866026, 0.5, -0.707107, -0.353553, 0.612372, -1.02313, 0.0341706, -1.02743)
 
 [node name="Node3D" type="Node3D" parent="Camera Point"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 
 [node name="Camera3D" type="Camera3D" parent="Camera Point/Node3D"]
 projection = 1
 size = 8.0
+near = 0.001
+far = 50.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -54,3 +73,5 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Money UI" parent="CanvasLayer/Game UI" instance=ExtResource("3_vvh5c")]
+layout_mode = 1
+offset_left = -40.0

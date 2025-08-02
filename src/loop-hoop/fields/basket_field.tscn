@@ -10,6 +10,7 @@ initial_tile = NodePath("Basket Row3/Basket Tile")
 
 [node name="Hoop" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+visible = false
 
 [node name="hoop" parent="Hoop" instance=ExtResource("2_7qxc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -17,15 +18,56 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 [node name="Basket Row" parent="." instance=ExtResource("3_7qxc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
+[node name="Basket Tile" parent="Basket Row" index="0"]
+has_hoop_circe = true
+horizontal_line = 2
+
+[node name="Basket Tile2" parent="Basket Row" index="1"]
+angle_line = 2
+
+[node name="Basket Tile3" parent="Basket Row" index="2"]
+angle_line = 4
+
 [node name="Basket Row2" parent="." instance=ExtResource("3_7qxc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
+[node name="Basket Tile2" parent="Basket Row2" index="1"]
+vertical_line = 2
+
+[node name="Basket Tile3" parent="Basket Row2" index="2"]
+vertical_line = 1
+
 [node name="Basket Row3" parent="." instance=ExtResource("3_7qxc4")]
+
+[node name="Basket Tile2" parent="Basket Row3" index="1"]
+vertical_line = 2
+
+[node name="Basket Tile3" parent="Basket Row3" index="2"]
+vertical_line = 1
 
 [node name="Basket Row4" parent="." instance=ExtResource("3_7qxc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
+[node name="Basket Tile2" parent="Basket Row4" index="1"]
+vertical_line = 2
+
+[node name="Basket Tile3" parent="Basket Row4" index="2"]
+vertical_line = 1
+
 [node name="Basket Row5" parent="." instance=ExtResource("3_7qxc4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
+[node name="Basket Tile" parent="Basket Row5" index="0"]
+horizontal_line = 1
+
+[node name="Basket Tile2" parent="Basket Row5" index="1"]
+angle_line = 3
+
+[node name="Basket Tile3" parent="Basket Row5" index="2"]
+angle_line = 1
+
+[editable path="Basket Row"]
+[editable path="Basket Row2"]
 [editable path="Basket Row3"]
+[editable path="Basket Row4"]
+[editable path="Basket Row5"]

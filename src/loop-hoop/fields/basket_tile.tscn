@@ -1,7 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://sdh72xin6nwy"]
+[gd_scene load_steps=12 format=3 uid="uid://sdh72xin6nwy"]
 
 [ext_resource type="Script" uid="uid://dvuijgpv0xxxf" path="res://fields/basket_tile.gd" id="1_6cwqi"]
 [ext_resource type="PackedScene" uid="uid://cri8oj6gv74ta" path="res://meta/money/ui/add_money_label.tscn" id="2_cmjn7"]
+[ext_resource type="PackedScene" uid="uid://b081wp5ertwsm" path="res://fields/tiles/tile_base.tscn" id="3_q2tn2"]
+[ext_resource type="PackedScene" uid="uid://bf6i6kqal1ht1" path="res://fields/tiles/tile-hoop-circle.glb" id="4_q2tn2"]
+[ext_resource type="PackedScene" uid="uid://bk3qs1oqm8uai" path="res://fields/tiles/tile-horizontal-line.glb" id="5_pujgl"]
+[ext_resource type="PackedScene" uid="uid://cgfq5bfd20cj4" path="res://fields/tiles/tile-vertical-line.glb" id="6_x4mao"]
+[ext_resource type="PackedScene" uid="uid://ckxjanwhhf1s1" path="res://fields/tiles/tile-angle-line.glb" id="7_m2go1"]
+[ext_resource type="PackedScene" uid="uid://t55qbqo0foqw" path="res://fields/tiles/tile-angle-line-2.glb" id="8_q2tn2"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6iooe"]
 size = Vector3(1.4, 0.1, 1)
@@ -19,9 +25,44 @@ add_money_label = ExtResource("2_cmjn7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00379431, 1.19209e-07, -0.00388122)
+visible = false
 mesh = SubResource("BoxMesh_6iooe")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0677662, 0)
+visible = false
 mesh = SubResource("BoxMesh_cmjn7")
 surface_material_override/0 = SubResource("StandardMaterial3D_cmjn7")
+
+[node name="tile-base" parent="." instance=ExtResource("3_q2tn2")]
+
+[node name="tile-hoop-circle" parent="tile-base" instance=ExtResource("4_q2tn2")]
+visible = false
+
+[node name="tile-horizontal-line" parent="tile-base" instance=ExtResource("5_pujgl")]
+visible = false
+
+[node name="tile-horizontal-line-2" parent="tile-base" instance=ExtResource("5_pujgl")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+
+[node name="tile-vertical-line-2" parent="tile-base" instance=ExtResource("6_x4mao")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+
+[node name="tile-vertical-line" parent="tile-base" instance=ExtResource("6_x4mao")]
+visible = false
+
+[node name="tile-angle-line-0" parent="tile-base" instance=ExtResource("7_m2go1")]
+visible = false
+
+[node name="tile-angle-line-90" parent="tile-base" instance=ExtResource("7_m2go1")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+
+[node name="tile-angle-line-180" parent="tile-base" instance=ExtResource("8_q2tn2")]
+visible = false
+
+[node name="tile-angle-line-270" parent="tile-base" instance=ExtResource("8_q2tn2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
